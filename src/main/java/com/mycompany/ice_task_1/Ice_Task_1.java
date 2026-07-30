@@ -48,6 +48,21 @@ public class Ice_Task_1 {
 
         
     }
+     
+      public static void displayTable(int[][] students) {
+        // Table header
+        System.out.printf("%-12s %-12s %-12s %-12s %-8s %-10s%n",
+                "Student No", "Challenge1", "Challenge2", "Challenge3", "Total", "Percent");
+        System.out.println("--------------------------------------------------------------");
+
+        for (int[] student : students) {
+            int total = student[4];
+            double percentage = (total / 300.0) * 100.0;
+
+            System.out.printf("%-12d %-12d %-12d %-12d %-8d %-10.2f%n",
+                    student[0], student[1], student[2], student[3], total, percentage);
+        }
+    }
     public static void bubbleSortDescending(int[][] array) {
         int n = array.length;
         for (int i = 0; i < n - 1; i++) {
