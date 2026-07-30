@@ -37,14 +37,14 @@ public class Ice_Task_1 {
 
       
         System.out.println("\n--- Original Student Records ---");
-        //displayTable(students);
+        displayTable(students);
 
        
         bubbleSortDescending(students);
 
         
         System.out.println("\n--- Sorted by Total Marks (Descending) ---");
-       
+       displayTable(students);
 
         
     }
