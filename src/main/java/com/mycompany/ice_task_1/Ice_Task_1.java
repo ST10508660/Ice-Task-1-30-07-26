@@ -10,11 +10,43 @@ import java.util.Scanner;
  */
 public class Ice_Task_1 {
 
-    public static void main(String[] args) {
-       Scanner rs= new Scanner(System.in);
-        System.out.println("Enter the number of students");
-        int noStudents=rs.nextInt();
-        int[][] storage;
+     public static void main(String[] args) {
+        Scanner rs = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int numStudents = rs.nextInt();
+
+        // Columns: 0 - Student number, 1 - Challenge1, 2 - Challenge2, 3 - Challenge3, 4 - Total
+        int[][] students = new int[numStudents][5];
+
+        
+        for (int i = 0; i < numStudents; i++) {
+            System.out.println("\nEnter details for Student " + (i + 1) + ":");
+            System.out.print("  Student number: ");
+            students[i][0] = rs.nextInt();
+            System.out.print("  Challenge 1 mark: ");
+            students[i][1] = rs.nextInt();
+            System.out.print("  Challenge 2 mark: ");
+            students[i][2] = rs.nextInt();
+            System.out.print("  Challenge 3 mark: ");
+            students[i][3] = rs.nextInt();
+
+            
+            students[i][4] = students[i][1] + students[i][2] + students[i][3];
+        }
+
+      
+        System.out.println("\n--- Original Student Records ---");
+        //displayTable(students);
+
+       
+        bubbleSortDescending(students);
+
+        
+        System.out.println("\n--- Sorted by Total Marks (Descending) ---");
+       
+
+        
     }
     public static void bubbleSortDescending(int[][] array) {
         int n = array.length;
